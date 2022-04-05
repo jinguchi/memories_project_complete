@@ -10,11 +10,10 @@ app.use(express.urlencoded({limit: "30mb", extended: true}))
 app.use(cors())
 
 // we will be using mongodb's cloud atlas version which means they will host our DB on their cloud
-const CONNECTION_URL = "mongodb+srv://javascriptmastery:javascriptmastery123@cluster0.9loo9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 5000
 
 // useNewUrlParser and useUnifiedTopology is just so we dont get errors
-mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
         app.listen(PORT, ()=> console.log(`Server running on port: ${PORT}`))
     }).catch((error) => {
