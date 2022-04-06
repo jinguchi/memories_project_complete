@@ -1,8 +1,15 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
+import dotenv from 'dotenv'
+import postRoutes from './routes/posts.js'
 
+dotenv.config()
 const app = express();
+
+// every route insides of the postRoutes is going to start with prefix 'posts' from /
+app.use('/posts', postRoutes)
+
 
 // didnt need to use bodyParser on this one
 app.use(express.json({limit: "30mb", extended: true}))
