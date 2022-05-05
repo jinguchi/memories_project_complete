@@ -1,3 +1,4 @@
+
 import React from 'react'
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
@@ -12,13 +13,32 @@ const App = () => {
   return (
     <div>
         <Container maxWidth="lg">
-            <AppBar position="static" color="inherit">
-              <Typography variant="h2" align="center">
+            <AppBar 
+            sx={{
+              borderRadius: 15,
+              margin: '30px 0',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'static',
+              bgcolor: "inherit"
+            }}
+            // position="static" 
+            // color="inherit"
+            >
+              <Typography 
+              sx={{color: 'rgba(0,183,255, 1)'}}
+              variant="h2" align="center">
                 Makahadoma
               </Typography>
-              <div align="center">
-                <img src = "https://i.imgur.com/eXd1UhJ.jpg" alt= "memories" height = "20%" width = "20%" />
-              </div>
+              <img 
+                src = "https://i.imgur.com/eXd1UhJ.jpg" 
+                alt= "memories"
+                // margin-left = '15px'
+                height = "10%" 
+                width = "10%"
+                />
             </AppBar>
             <Grow in>
               <Container>
